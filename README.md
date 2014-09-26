@@ -17,7 +17,7 @@ This plugin adds a redirect to the shared login plugin for Blesta
 
 Installing "Blesta Shared Login" can be done either by searching for "Blesta Shared Login" via the "Plugins > Add New" screen in your WordPress dashboard, or by using the following steps:
 
-1. Download the plugin via http://www.mrrsmtechnologies.com/
+1. Download the plugin via http://www.mrrsmtechnologies.com/blesta-shared-login/
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Configure plugin with Blesta shared_login url and key
