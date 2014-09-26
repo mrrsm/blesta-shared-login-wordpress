@@ -20,11 +20,12 @@ Installing "Blesta Shared Login" can be done either by searching for "Blesta Sha
 1. Download the plugin via http://www.mrrsmtechnologies.com/
 2. Upload the ZIP file through the 'Plugins > Add New > Upload' screen in your WordPress dashboard
 3. Activate the plugin through the 'Plugins' menu in WordPress
+4. Configure plugin with Blesta shared_login url and key
 
 # Frequently Asked Questions
 
-* What is the plugin tepmlate for?
-  * This plugin adds a wordpress connector to the shared login plugin for Blesta
+* When I login it doesn't take me back to my wordpress site?
+    * If your user in wordpress doesn't match the user in Blesta it will not properly redirect back
 
 
 # Changelog

@@ -2,6 +2,19 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+function blesta_shared_login_redirect($user_login, $user) {
+    // The key from [Settings] > [Company] > [Plugins] > [Shared Login]
+    $key = get_option('bsl_shared_key');
+
+    $t = time();
+    $u = $user_login;
+    $r = get_site_url();
+    $h = hash_hmac("sha256", $t . $u . $r, $key);
+
+    header("Location: " . get_option('bsl_url') . (strpos('?', get_option('bsl_url') >= 0) ? "&" : '?' ) . http_build_query(compact("t", "u", "r", "h")));
+    exit;
+}
+
 class Blesta_Shared_Login {
 
 	/**
@@ -109,19 +122,7 @@ class Blesta_Shared_Login {
 			$this->admin = new Blesta_Shared_Login_Admin_API();
 		}
 
-		function your_function($user_login, $user) {
-		    // The key from [Settings] > [Company] > [Plugins] > [Shared Login]
-		    $key = get_option('bsl_shared_key');
-
-		    $t = time();
-		    $u = $user_login;
-		    $r = "http://wordpress.dev/";
-		    $h = hash_hmac("sha256", $t . $u . $r, $key);
-
-		    header("Location: " . get_option('bsl_url') . (strpos('?', get_option('bsl_url') >= 0) ? "&" : '?' ) . http_build_query(compact("t", "u", "r", "h")));
-		    exit;
-		}
-		add_action('wp_login', 'your_function', 10, 2);
+		add_action('wp_login', 'blesta_shared_login_redirect', 10, 2);
 
 
 		// Handle localisation
