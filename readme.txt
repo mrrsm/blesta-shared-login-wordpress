@@ -13,8 +13,8 @@ This plugin adds a redirect to the shared login plugin for Blesta
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as
-in the following sections).
+This plugin adds a redirect to the shared login plugin for Blesta
+(https://www.blesta.com/) after user login
 
 == Installation ==
 
